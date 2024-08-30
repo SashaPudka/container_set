@@ -1,22 +1,22 @@
-import Character from "./Character";
-
 class Team {
-    constructor() {
+    constructor(name) {
+        this.name = name;
         this.members = new Set();
     }
-    add(data) {
-        if (this.members.has(Character)) {
+
+    add(member) {
+        if (this.members.has(member)) {
             throw new Error("Such an object already exists in the team");
         }
-            this.members.add(data);
+            this.members.add(member);
     }
 
-    addAll(...data) {
-        for (const i of Character) this.members.add(i)
+    addAll(...rest) {
+        rest.forEach((member) => this.members.add(member));
     }
 
     toArray() {
-        return toArray.from(this.members)
+        return Array.from(this.members);
     }
 }
 

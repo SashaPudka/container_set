@@ -1,1 +1,2 @@
-import "./class/team";
+import "./class/Character"
+import "./class/Team"
